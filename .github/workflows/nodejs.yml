@@ -23,4 +23,4 @@ jobs:
       run: npm install
 
     - name: 執行單元測試
-      run: npm test
+      run: npx test
