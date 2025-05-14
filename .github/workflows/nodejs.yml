@@ -1,0 +1,26 @@
+name: Node.js CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: 下載程式碼
+      uses: actions/checkout@v4
+
+    - name: 安裝 Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: 18
+
+    - name: 安裝依賴套件
+      run: npm install
+
+    - name: 執行單元測試
+      run: npm test
