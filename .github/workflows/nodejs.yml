@@ -22,5 +22,8 @@ jobs:
     - name: 安裝依賴套件
       run: npm install
 
+    - name: 修正 jest 權限問題
+      run: chmod +x node_modules/.bin/jest
+
     - name: 執行單元測試
       run: npm test
